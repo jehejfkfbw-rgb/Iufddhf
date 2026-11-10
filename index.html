@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090d1b">
+  <title>Nova Digital | طلب استثمار</title>
+  <style>
+    :root{--bg:#090d1b;--panel:#111a2e;--line:rgba(255,255,255,.11);--muted:#aab5cc;--white:#f7f9ff;--blue:#55c7ff;--violet:#9272ff}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;font-family:Tahoma,Arial,sans-serif;color:var(--white);background:radial-gradient(circle at 15% 10%,#1d2b58 0,transparent 35%),radial-gradient(circle at 90% 85%,#292052 0,transparent 30%),var(--bg);display:grid;place-items:center;padding:24px}
+    .wrap{width:min(100%,540px)}
+    .brand{text-align:center;margin-bottom:22px}
+    .logo{width:64px;height:64px;border-radius:20px;margin:auto auto 12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--violet));font-size:28px;font-weight:900;box-shadow:0 12px 35px #6c83ff44}
+    .brand h1{font-size:25px;margin:0;letter-spacing:.5px}.brand p{color:var(--muted);margin:8px 0 0;font-size:13px}
+    .card{background:linear-gradient(145deg,rgba(22,33,57,.97),rgba(13,20,37,.97));border:1px solid var(--line);border-radius:25px;padding:27px;box-shadow:0 24px 70px #0008}
+    .eyebrow{color:var(--blue);font-size:12px;font-weight:bold;margin-bottom:8px}
+    h2{font-size:21px;margin:0 0 8px}.intro{font-size:13px;line-height:1.8;color:var(--muted);margin:0 0 22px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    .field{margin-bottom:15px}.field.full{grid-column:1/-1}
+    label{display:block;font-size:13px;margin-bottom:8px;color:#e8edfa}
+    input{width:100%;background:#0a1223;border:1px solid #293853;border-radius:12px;padding:14px;color:white;font:inherit;font-size:14px;outline:none;transition:.2s}
+    input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #55c7ff20}
+    input::placeholder{color:#72809a}
+    .hint{font-size:11px;color:#8290aa;margin-top:6px;line-height:1.6}
+    .check{display:flex;gap:10px;align-items:flex-start;background:#0b1426;border:1px solid var(--line);border-radius:12px;padding:12px;margin:4px 0 18px;font-size:11px;color:#c3cce0;line-height:1.7}
+    .check input{width:17px;height:17px;margin:2px 0 0;accent-color:#7e8cff;flex:none}
+    button{width:100%;border:0;border-radius:13px;padding:16px;background:linear-gradient(100deg,#36bdf5,#806bff);color:white;font-weight:bold;font-size:16px;cursor:pointer;box-shadow:0 10px 25px #536cff40}
+    button:hover{filter:brightness(1.08)}button:active{transform:scale(.99)}
+    .foot{text-align:center;color:#7786a1;font-size:11px;line-height:1.8;margin:17px 4px 0}
+    .success{display:none;text-align:center;padding:14px 2px 5px}
+    .success .tick{width:76px;height:76px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;background:#153d39;color:#58e0b4;border:1px solid #2a8d77;font-size:38px}
+    .success h2{font-size:23px;margin-bottom:10px}.success p{color:#c0cbe0;line-height:1.9;font-size:14px}
+    .demo{display:inline-block;background:#342a15;color:#ffd98a;border:1px solid #79602b;padding:7px 11px;border-radius:30px;font-size:11px;margin-top:8px}
+    .back{margin-top:17px;background:#202c45;box-shadow:none}
+    @media(max-width:480px){body{padding:16px}.card{padding:21px}.grid{grid-template-columns:1fr;gap:0}.field.full{grid-column:auto}.brand h1{font-size:23px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="brand">
+      <div class="logo">N</div>
+      <h1>NOVA DIGITAL</h1>
+      <p>بوابة طلبات الاستثمار</p>
+    </header>
+
+    <section class="card" id="formCard">
+      <div id="formView">
+        <div class="eyebrow">نموذج تسجيل اهتمام</div>
+        <h2>ابدأ طلبك الآن</h2>
+        <p class="intro">املأ البيانات التالية لعرض تأكيد تجريبي على الشاشة. لا يتم إرسال البيانات أو حفظها في أي قاعدة بيانات.</p>
+
+        <form id="investmentForm">
+          <div class="grid">
+            <div class="field full">
+              <label for="name">الاسم بالكامل</label>
+              <input id="name" name="name" type="text" placeholder="اكتب اسمك بالكامل" autocomplete="name" required>
+            </div>
+            <div class="field full">
+              <label for="national">الرقم القومي</label>
+              <input id="national" name="national" type="text" inputmode="numeric" maxlength="14" minlength="14" placeholder="14 رقمًا" required>
+              <div class="hint">للعرض التجريبي فقط، استخدم بيانات وهمية ولا تدخل رقمك القومي الحقيقي.</div>
+            </div>
+            <div class="field">
+              <label for="phone">رقم الموبايل</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="01xxxxxxxxx" required>
+            </div>
+            <div class="field">
+              <label for="age">العمر (بالسنوات)</label>
+              <input id="age" name="age" type="number" min="18" max="100" placeholder="مثال: 25" required>
+            </div>
+            <div class="field full">
+              <label for="months">مدة الاستثمار (بالشهور)</label>
+              <input id="months" name="months" type="number" min="1" max="120" placeholder="مثال: 6 شهور" required>
+            </div>
+          </div>
+
+          <label class="check">
+            <input type="checkbox" id="agree" required>
+            <span>أفهم أن هذه صفحة عرض تجريبي فقط، وأن الضغط على الزر لا ينشئ استثمارًا فعليًا ولا يحوّل أموالًا أو يثبت وجود عقد استثماري.</span>
+          </label>
+          <button type="submit">تأكيد الطلب</button>
+        </form>
+        <p class="foot">Nova Digital · نموذج تجريبي غير متصل بخادم أو قاعدة بيانات</p>
+      </div>
+
+      <div class="success" id="successView" role="status" aria-live="polite">
+        <div class="tick">✓</div>
+        <h2>تم تسجيل طلبك بنجاح!</h2>
+        <p>شكرًا لاهتمامك بشركة <strong>Nova Digital</strong>.<br>تم عرض رسالة التأكيد التجريبية على هذه الشاشة.</p>
+        <span class="demo">عرض تجريبي — لم يتم تنفيذ استثمار فعلي</span>
+        <button class="back" type="button" id="backBtn">العودة للنموذج</button>
+      </div>
+    </section>
+  </main>
+  <script>
+    const form = document.getElementById('investmentForm');
+    const formView = document.getElementById('formView');
+    const successView = document.getElementById('successView');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      const national = document.getElementById('national').value.trim();
+      if (!/^\d{14}$/.test(national)) {
+        document.getElementById('national').setCustomValidity('اكتب 14 رقمًا بالضبط');
+        document.getElementById('national').reportValidity();
+        document.getElementById('national').setCustomValidity('');
+        return;
+      }
+      formView.style.display = 'none';
+      successView.style.display = 'block';
+    });
+    document.getElementById('backBtn').addEventListener('click', function() {
+      successView.style.display = 'none';
+      formView.style.display = 'block';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
